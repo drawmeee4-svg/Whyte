@@ -1,8 +1,9 @@
-import telegram
+from python-telegram-bot import Bot
+from python-telegram-bot.ext 
+import Updater, CommandHandler
 import requests
 import schedule
 import time
-from telegram.ext import Updater, CommandHandler
 from datetime import datetime
 import os
 
@@ -10,7 +11,7 @@ TELEGRAM_TOKEN = os.getenv('8430879836:AAHt_h3EhSPmmy4FA47opz5NPYOE1jC7ymU')
 CHAT_ID = os.getenv('7753187984')
 SYMBOLS = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'XRPUSDT']
 
-bot = telegram.Bot(token=TELEGRAM_TOKEN)
+bot = bot(token=TELEGRAM_TOKEN)
 
 def calculate_rsi(closes, period=14):
     if len(closes) < period:
